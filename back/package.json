@@ -1,0 +1,33 @@
+{
+  "name": "block-explorer-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect -e js,md index.js | ./node_modules/.bin/bunyan",
+    "test": "istanbul cover tape ./test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PBSA/block-explorer.git"
+  },
+  "author": "Peerplays Blockchain Standards Association",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PBSA/block-explorer/issues"
+  },
+  "homepage": "https://github.com/PBSA/block-explorer#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "await": "^0.2.6",
+    "bunyan": "^1.8.12",
+    "confidence": "^3.0.2",
+    "dotenv": "^4.0.0",
+    "glue": "^5.0.0",
+    "hapi": "^17.2.0",
+    "joi": "^13.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}

@@ -1,0 +1,21 @@
+sudo: true
+language: node_js
+node_js:
+  - "8"
+services:
+  - mongodb
+env:
+  - NODE_ENV=test CXX=g++-4.8
+before_install:
+  - sudo apt-get install unicode-data
+before_script:
+  - cd back
+  - yarn
+script:
+  - echo "placeholder"    
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
