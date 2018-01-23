@@ -12,16 +12,13 @@ const config = {
     projectName: 'Peerplays Block Explorer Backend',
     logLevel: "info",
     port: { api: 8000 },
-    hapiMongoModels: {
-        mongodb: {
-            uri: {
-                $filter: 'env',
-                production: process.env.MONGODB_URI,
-                test: 'mongodb://localhost:27017/pbsa',
-                $default: 'mongodb://localhost:27017/pbsa'
-            }
-        },
-        autoIndex: true
+    mongodb: {
+        uri: {
+            $filter: 'env',
+            production: process.env.MONGODB_URI,
+            test: 'mongodb://localhost:27017/private_test',
+            $default: 'mongodb://localhost:27017/private_test'
+        }
     },
 };
 
