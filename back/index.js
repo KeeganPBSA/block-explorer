@@ -1,6 +1,8 @@
 'use strict';
+const Config = require('./config');
 const Glue = require('glue');
 const Manifest = require('./manifest');
+const Mongoose = require('mongoose');
 const Log = require('./server/utils/logger');
 
 
@@ -12,6 +14,16 @@ exports.deployment = async (start) => {
         return server;
     }
     await server.start();
+
+    let mongoUri =  Config.get('/mongodb/uri');
+
+    Mongoose.connect(mongoUri, {}).then(() => {
+        Log.info(`Connected to ${mongoUri}`);
+    },
+    err => {
+        Log.error(err);
+    });
+
     Log.info(`Server started at ${server.info.uri}`);
     return server;
 };
