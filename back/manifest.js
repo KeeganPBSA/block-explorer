@@ -20,7 +20,7 @@ const manifest = {
     register: {
         plugins: [
             {
-                plugin: './server/api/block',
+                plugin: './server/api/blocks',
                 routes: {
                     prefix: '/api'
                 }

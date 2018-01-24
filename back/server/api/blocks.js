@@ -6,7 +6,7 @@ const Joi = require('joi');
 exports.register = function (server, options) {
   server.route({
       method: 'GET',
-      path: '/block',
+      path: '/blocks',
       config: {
           validate: {
               query: {
@@ -25,7 +25,9 @@ exports.register = function (server, options) {
               offset: request.query['page[offset]'],
               limit: request.query['page[limit]']
           };
-          return await Block.paginate(query, options);
+          // We are hiding metadata here that could be useful later
+          return { blocks: (await Block.paginate(query, options)).docs };
+
       }
   });
 };
