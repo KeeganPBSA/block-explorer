@@ -29,12 +29,6 @@ const columns = [
       label: 'Transactions',
     }
   },
-  {
-    property: 'operations',
-    header: {
-      label: 'Operations',
-    }
-  },
 ];
 
 class BlockTable extends Component {
