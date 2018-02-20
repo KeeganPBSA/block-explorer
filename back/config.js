@@ -11,7 +11,10 @@ const criteria = {
 const config = {
     projectName: 'Peerplays Block Explorer Backend',
     logLevel: "info",
-    port: { api: 8000 },
+    port: {
+        api: 8000,
+        socket: 3000
+    },
     mongodb: {
         uri: {
             $filter: 'env',
