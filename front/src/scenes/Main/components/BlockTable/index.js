@@ -4,32 +4,26 @@ import "react-table/react-table.css";
 
 import * as blocksSelectors from 'data/blocks/selectors';
 
+
 const columns = [
   {
-    property: 'id',
-    header: {
-      label: 'Height',
-    }
+    accessor: 'id',
+    Header: 'Height'
   },
   {
-    property: 'timestamp',
-    header: {
-      label: 'Time',
-    }
+    accessor: 'timestamp',
+    Header: 'Time'
   },
   {
-    property: 'witness',
-    header: {
-      label: 'Witness',
-    }
+    accessor: 'witness',
+    Header: 'Witness'
   },
   {
-    property: 'transactions',
-    header: {
-      label: 'Transactions',
-    }
-  },
+    accessor: 'transactions',
+    Header: 'Transactions'
+  }
 ];
+
 
 class BlockTable extends Component {
     constructor() {
@@ -48,28 +42,7 @@ class BlockTable extends Component {
             <div>
               <ReactTable
                 data={this.state.blocks}
-                columns={[
-                  {
-                    columns: [
-                      {
-                        Header: "Height",
-                        accessor: "id"
-                      },
-                      {
-                        Header: "Time",
-                        accessor: "timestamp"
-                      },
-                      {
-                        Header: "Witness",
-                        accessor: "witness"
-                      },
-                      {
-                        Header: "Transactions",
-                        accessor: "transactions"
-                      },
-                    ]
-                  }
-                ]}
+                columns={columns}
                 defaultPageSize={20}
                 className="-striped -highlight"
               />
