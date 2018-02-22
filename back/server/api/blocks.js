@@ -5,7 +5,7 @@ const Joi = require('joi');
 const _ = require('lodash');
 
 
-exports.register = function (server, options) {
+const register = function (server, options) {
   server.route({
       method: 'GET',
       path: '/blocks',
@@ -42,4 +42,8 @@ exports.register = function (server, options) {
   });
 };
 
-exports.name = 'block';
+
+module.exports = {
+    name: 'api-blocks',
+    register
+};
