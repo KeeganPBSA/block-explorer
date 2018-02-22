@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import BlockTable from './components/BlockTable';
+import RealTimeBlockTable from './components/RealTimeBlockTable';
 
 
 class Main extends Component {
     render() {
         return (
-            <BlockTable />
+            <RealTimeBlockTable />
         )
     }
 

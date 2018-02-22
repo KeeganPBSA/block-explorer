@@ -25,9 +25,13 @@ const columns = [
 ];
 
 
-class BlockTable extends Component {
+class RealTimeBlockTable extends Component {
     constructor() {
         super();
+        this.socket = {
+            client: null,
+            handler: this.updateTableData
+        }
         this.state = {
             blocks: []
         }
@@ -35,6 +39,15 @@ class BlockTable extends Component {
 
     async componentDidMount() {
         this.setState({blocks: await blocksSelectors.getMain()});
+        await blocksSelectors.subscribe(this.socket);
+    }
+
+    componentWillUnmount() {
+        blocksSelectors.unsubscribe(this.socket);
+    }
+
+    updateTableData = (blocks) => {
+        this.setState({blocks: blocks});
     }
 
     render() {
@@ -43,7 +56,7 @@ class BlockTable extends Component {
               <ReactTable
                 data={this.state.blocks}
                 columns={columns}
-                defaultPageSize={20}
+                showPagination={false}
                 className="-striped -highlight"
               />
             </div>
@@ -51,4 +64,4 @@ class BlockTable extends Component {
     }
 }
 
-export default BlockTable
+export default RealTimeBlockTable
