@@ -26,7 +26,7 @@ exports.deployment = async (start) => {
     }
     await server.start();
 
-    const socketServer = new Hapi.Server({ port: 8126 });
+    const socketServer = new Hapi.Server({ port: Config.get('/port/socket') });
     await socketServer.register(Nes);
     socketServer.subscription('/blocks');
     await socketServer.start();
