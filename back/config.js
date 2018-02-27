@@ -13,7 +13,7 @@ const config = {
     logLevel: "info",
     port: {
         api: 8000,
-        socket: 3000
+        socket: 8001
     },
     mongodb: {
         uri: {
