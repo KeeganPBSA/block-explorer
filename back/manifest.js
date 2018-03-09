@@ -24,6 +24,12 @@ const manifest = {
                 routes: {
                     prefix: '/api'
                 }
+            },
+            {
+                plugin: './server/api/account',
+                routes: {
+                    prefix: '/api'
+                }
             }
         ]
     }

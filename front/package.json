@@ -5,9 +5,11 @@
   "dependencies": {
     "fetchival": "^0.3.3",
     "lodash": "^4.17.5",
+    "material-ui": "^0.20.0",
     "nes": "^7.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
     "react-table": "^6.7.6",
     "sockette": "^1.2.0"

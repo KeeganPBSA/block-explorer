@@ -29,7 +29,9 @@
     "joigoose": "^4.0.0",
     "mongoose": "^5.0.1",
     "mongoose-paginate": "^5.0.3",
-    "nes": "^7.0.2"
+    "nes": "^7.0.2",
+    "peerplaysjs-lib": "^0.5.3-alpha",
+    "peerplaysjs-ws": "^0.1.11"
   },
   "devDependencies": {
     "nodemon": "^1.14.11"
